@@ -1,7 +1,9 @@
+# MoveIt
+
 # About the project
   This project was developed using [NextJS](https://nextjs.org/) during rocketseat Next Level Week editon 4.
 
-  It is an gamification application that gives exercises (stretching for the body and eyes) that can be done in a short time.
+  It is a gamification application that gives exercises (stretching for the body and eyes) that can be done in a short time.
 
 # Installation & Set Up
 
