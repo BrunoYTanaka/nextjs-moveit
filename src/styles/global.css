@@ -6,7 +6,8 @@
 
 :root {
   --white: #fff;
-  --background: #f2f3f5;
+  --light-dark: #202327;
+  --background: #000;
   --gray-line: #DCDDE0;
   --text: #666;
   --text-highlight:#B3B9FF;
