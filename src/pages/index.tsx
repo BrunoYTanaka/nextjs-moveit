@@ -1,12 +1,13 @@
 import { GetServerSideProps } from 'next'
-import ExperienceBar from "../components/ExperienceBar"
-import CompletedChallenges from "../components/CompletedChallenges"
-import Profile from "../components/Profile"
-import styles from '../styles/pages/Home.module.css'
-import Countdown from "../components/Countdown"
-
 import Head from 'next/head'
-import ChallengeBox from "../components/ChallengeBox"
+import { ReactElement } from 'react'
+import ExperienceBar from '../components/ExperienceBar'
+import CompletedChallenges from '../components/CompletedChallenges'
+import Profile from '../components/Profile'
+import styles from '../styles/pages/Home.module.css'
+import Countdown from '../components/Countdown'
+
+import ChallengeBox from '../components/ChallengeBox'
 import { CountdownProvider } from '../contexts/CountdownContext'
 import { ChallengesProvider } from '../contexts/ChallengesContext'
 
@@ -16,13 +17,16 @@ interface HomeProps {
   challengesCompleted: number
 }
 
-export default function Home(props: HomeProps) {
+export default function Home({
+  level,
+  challengesCompleted,
+  currentExperience,
+}: HomeProps): ReactElement {
   return (
     <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-
+      level={level}
+      currentExperience={currentExperience}
+      challengesCompleted={challengesCompleted}
     >
       <div className={styles.container}>
         <Head>
@@ -46,15 +50,14 @@ export default function Home(props: HomeProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-
+export const getServerSideProps: GetServerSideProps = async context => {
   const { level, currentExperience, challengesCompleted } = context.req.cookies
 
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted)
-    }
+      challengesCompleted: Number(challengesCompleted),
+    },
   }
 }
