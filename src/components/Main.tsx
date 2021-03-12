@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import React, { ReactElement, useContext } from 'react'
 import {
   ChallengesContext,
@@ -24,9 +23,6 @@ function Main(): ReactElement {
       challengesCompleted={challengesCompleted}
     >
       <div className={styles.container}>
-        <Head>
-          <title>Início | move.it</title>
-        </Head>
         <ExperienceBar />
         <CountdownProvider>
           <section>

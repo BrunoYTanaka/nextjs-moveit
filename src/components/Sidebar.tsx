@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import React, { ReactElement, useContext, useState } from 'react'
 import { RiLogoutBoxLine } from 'react-icons/ri'
 import { AuthContext } from '../contexts/AuthContext'
@@ -7,15 +8,25 @@ import styles from '../styles/components/Sidebar.module.css'
 function Sidebar(): ReactElement {
   const { logout } = useContext(AuthContext)
   const [selected, setSelected] = useState(0)
-
+  const router = useRouter()
   const handleSelectMenu = (index: number) => {
     setSelected(index)
+    switch (index) {
+      case 0:
+        router.push('/')
+        break
+      case 1:
+        router.push('/leaderboard')
+        break
+      default:
+        router.push('/')
+    }
   }
 
   return (
     <div className={styles.sideBarContainer}>
       <header>
-        <Image src="/logo2.svg" alt="logo" width={360} height={76} />
+        <Image src="/logo2.svg" alt="logo" width={360} height={180} />
       </header>
       <div className={styles.sideBarButtons}>
         <div className={selected === 0 ? styles.buttonWrapper : null}>

@@ -4,11 +4,14 @@ import '../styles/global.css'
 import { ToastContainer } from 'react-toastify'
 import { AuthProvider } from '../contexts/AuthContext'
 import 'react-toastify/dist/ReactToastify.css'
+import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
   return (
     <AuthProvider>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
     </AuthProvider>
   )
