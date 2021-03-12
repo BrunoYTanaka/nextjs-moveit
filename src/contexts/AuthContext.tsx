@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from 'react'
+import { useRouter } from 'next/router'
 
 interface User {
   name: string
@@ -14,6 +15,7 @@ interface User {
 
 interface AuthContextData {
   user: User
+  logout: () => void
   saveUser: (userInfo: User) => void
 }
 
@@ -24,7 +26,8 @@ interface AuthProviderProps {
 }
 
 export function AuthProvider({ children }: AuthProviderProps): ReactElement {
-  const [user, setUser] = useState({})
+  const router = useRouter()
+  const [user, setUser] = useState({} as User)
 
   useEffect(() => {
     const userSession = Cookies.get('user')
@@ -38,8 +41,13 @@ export function AuthProvider({ children }: AuthProviderProps): ReactElement {
     Cookies.set('user', JSON.stringify(userInfo))
   }
 
+  const logout = () => {
+    Cookies.remove('user')
+    router.push('/login')
+  }
+
   return (
-    <AuthContext.Provider value={{ user, saveUser }}>
+    <AuthContext.Provider value={{ user, saveUser, logout }}>
       {children}
     </AuthContext.Provider>
   )

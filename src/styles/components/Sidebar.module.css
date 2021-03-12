@@ -1,0 +1,52 @@
+.sideBarContainer {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 120px;
+}
+
+.sideBarContainer button {
+  background-color: var(--white);
+  margin: 1rem;
+  width: 4rem;
+  outline: 0;
+  border: 0;
+  height: 4rem;
+}
+
+.sideBarContainer .buttonWrapper {
+  position: relative;
+  border-radius: 0px 5px 5px 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sideBarContainer .buttonWrapper::before {
+  position: absolute;
+  height: 70%;
+  width: 4px;
+  left: 0;
+  top: 15%;
+  content: '';
+  border-radius: 0px 5px 5px 0px;
+  background: var(--blue);
+}
+
+.sideBarContainer > header {
+  margin-top: 2rem;
+}
+
+.sideBarButtons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  margin-bottom: 2rem;
+}
