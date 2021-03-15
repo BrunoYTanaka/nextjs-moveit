@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react'
+import React, { ReactElement, ReactNode, useState } from 'react'
 import Head from 'next/head'
 import Sidebar from './Sidebar'
 import styles from '../styles/components/Layout.module.css'
@@ -13,7 +13,7 @@ function Layout({ children }: LayoutProps): ReactElement {
       <Head>
         <title>Início | move.it</title>
       </Head>
-      {/* <TopBar /> */}
+      <TopBar />
       <section>
         <Sidebar />
         {children}

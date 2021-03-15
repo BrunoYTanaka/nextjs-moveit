@@ -1,4 +1,4 @@
-.sideBarContainer {
+.navMenu {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -9,39 +9,11 @@
   align-items: center;
 }
 
-.sideBarContainer button {
-  background-color: var(--white);
-  margin: 1rem;
-  width: 4rem;
-  outline: 0;
-  border: 0;
-  height: 4rem;
-}
-
-.sideBarContainer .buttonWrapper {
-  position: relative;
-  border-radius: 0px 5px 5px 0px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.sideBarContainer .buttonWrapper::before {
-  position: absolute;
-  height: 70%;
-  width: 4px;
-  left: 0;
-  top: 15%;
-  content: '';
-  border-radius: 0px 5px 5px 0px;
-  background: var(--blue);
-}
-
-.sideBarContainer > header {
+.navMenu > header {
   margin-top: 2rem;
 }
 
-.sideBarButtons {
+.menuItems {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -49,13 +21,51 @@
   align-items: center;
 }
 
-.footer{
+.menuItem {
+  background-color: var(--white);
+  margin: 2rem;
+  height: 2rem;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuItemSelected {
+  position: relative;
+  border-radius: 0px 5px 5px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuItemSelected::before {
+  position: absolute;
+  height: 50px;
+  width: 4px;
+  left: 0;
+  content: '';
+  border-radius: 0px 5px 5px 0px;
+  background: var(--blue);
+}
+
+.footer {
   margin-bottom: 2rem;
 }
 
+.footer button {
+  background-color: var(--white);
+  outline: 0;
+  border: 0;
+}
 
 @media(max-width:720px){
-  .sideBarContainer{
+  .navMenu {
     display: none;
   }
 }
