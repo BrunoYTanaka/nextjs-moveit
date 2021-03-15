@@ -23,32 +23,40 @@ function Sidebar(): ReactElement {
     }
   }
 
+  const menuItem = [
+    {
+      imageSrc: '/icons/home',
+      alt: 'home',
+    },
+    {
+      imageSrc: '/icons/ranking',
+      alt: 'ranking_leaders',
+    },
+  ]
+
   return (
     <div className={styles.sideBarContainer}>
       <header>
         <Image src="/logo2.svg" alt="logo" width={360} height={180} />
       </header>
       <div className={styles.sideBarButtons}>
-        <div className={selected === 0 ? styles.buttonWrapper : null}>
-          <button type="button" onClick={() => handleSelectMenu(0)}>
-            <Image
-              src={`/icons/home${selected === 0 ? '-selected.svg' : '.svg'}`}
-              alt="home"
-              width={30}
-              height={30}
-            />
-          </button>
-        </div>
-        <div className={selected === 1 ? styles.buttonWrapper : null}>
-          <button type="button" onClick={() => handleSelectMenu(1)}>
-            <Image
-              src={`/icons/ranking${selected === 1 ? '-selected.svg' : '.svg'}`}
-              alt="ranking_leaders"
-              width={30}
-              height={30}
-            />
-          </button>
-        </div>
+        {menuItem.map((item, index) => (
+          <div
+            key={item.imageSrc}
+            className={selected === index ? styles.buttonWrapper : null}
+          >
+            <button type="button" onClick={() => handleSelectMenu(index)}>
+              <Image
+                src={`${item.imageSrc}${
+                  selected === index ? '-selected.svg' : '.svg'
+                }`}
+                alt={item.alt}
+                width={30}
+                height={30}
+              />
+            </button>
+          </div>
+        ))}
       </div>
       <footer className={styles.footer}>
         <button type="button" onClick={logout}>
