@@ -16,7 +16,7 @@ interface User {
 interface AuthContextData {
   user: User
   logout: () => void
-  saveUser: (userInfo: User) => void
+  login: (userInfo: User) => void
 }
 
 export const AuthContext = createContext({} as AuthContextData)
@@ -36,9 +36,11 @@ export function AuthProvider({ children }: AuthProviderProps): ReactElement {
     }
   }, [])
 
-  const saveUser = (userInfo: User) => {
+  const login = (userInfo: User) => {
     setUser(userInfo)
-    Cookies.set('user', JSON.stringify(userInfo))
+    Cookies.set('user', JSON.stringify(userInfo), {
+      expires: 1,
+    })
   }
 
   const logout = () => {
@@ -47,7 +49,7 @@ export function AuthProvider({ children }: AuthProviderProps): ReactElement {
   }
 
   return (
-    <AuthContext.Provider value={{ user, saveUser, logout }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

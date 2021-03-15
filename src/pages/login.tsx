@@ -3,14 +3,15 @@ import Image from 'next/image'
 import { ImSpinner2 } from 'react-icons/im'
 import { useRouter } from 'next/router'
 import { toast } from 'react-toastify'
+import { GetServerSideProps } from 'next'
 import { AuthContext } from '../contexts/AuthContext'
 import styles from '../styles/pages/Login.module.css'
 import api from '../services/api'
 
 function Login(): ReactElement {
-  const { saveUser } = useContext(AuthContext)
+  const { login } = useContext(AuthContext)
   const [isLoading, setIsLoading] = useState(false)
-  const [login, setLogin] = useState(null)
+  const [username, setLogin] = useState(null)
   const [error, setError] = useState('')
   const router = useRouter()
 
@@ -20,19 +21,19 @@ function Login(): ReactElement {
   }
 
   const handleClick = () => {
-    if (!login) {
+    if (!username) {
       setError('user name is required!')
     }
     setIsLoading(true)
     api
-      .get(`/users/${login}`)
+      .get(`/users/${username}`)
       .then(response => {
         const { data } = response
         const user = {
           name: data.name,
           avatarUrl: data.avatar_url,
         }
-        saveUser(user)
+        login(user)
         router.push('/')
       })
       .catch(err => {
@@ -90,3 +91,17 @@ function Login(): ReactElement {
 }
 
 export default Login
+
+export const getServerSideProps: GetServerSideProps = async context => {
+  const { user } = context.req.cookies
+
+  if (user) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    }
+  }
+  return { props: {} }
+}
