@@ -25,6 +25,7 @@
 
 .challengedCompleted {
   width: 20%;
+  min-width: 20%;
   display: flex;
   justify-content: flex-start;
   align-items: center;

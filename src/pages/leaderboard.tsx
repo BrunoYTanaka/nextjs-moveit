@@ -3,20 +3,28 @@ import React, { ReactElement } from 'react'
 import Card from '../components/Card'
 import CardHeader from '../components/Card/CardHeader'
 import styles from '../styles/pages/Leaderboard.module.css'
+import leaderboard from '../../leaderboard.json'
 
-function leaderboard(): ReactElement {
+function Leaderboard(): ReactElement {
   return (
     <div className={styles.container}>
       <h1>LeaderBoard</h1>
       <CardHeader />
-      <Card />
-      <Card />
-      <Card />
+      {leaderboard.map(user => (
+        <Card
+          key={user.position}
+          user={user.user}
+          level={user.level}
+          currentExperience={user.currentExperience}
+          challengedCompleted={user.challengedCompleted}
+          position={user.position}
+        />
+      ))}
     </div>
   )
 }
 
-export default leaderboard
+export default Leaderboard
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const { user } = context.req.cookies

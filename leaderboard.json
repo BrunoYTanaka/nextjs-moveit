@@ -1,0 +1,52 @@
+[
+  {
+    "position": 1,
+    "user": {
+      "name": "Diego Fernandes",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2254731?s=460&u=4fcc8ca9672eeb41ea800271831b7c687bc17054&v=4"
+    },
+    "level": 43,
+    "challengedCompleted": 127,
+    "currentExperience": 15400
+  },
+  {
+    "position": 2,
+    "user": {
+      "name": "Tiago Luchtenberg",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2254731?s=460&u=4fcc8ca9672eeb41ea800271831b7c687bc17054&v=4"
+    },
+    "level": 37,
+    "challengedCompleted": 98,
+    "currentExperience": 117000
+  },
+  {
+    "position": 3,
+    "user": {
+      "name": "Cleiton Souza",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2254731?s=460&u=4fcc8ca9672eeb41ea800271831b7c687bc17054&v=4"
+    },
+    "level": 36,
+    "challengedCompleted": 97,
+    "currentExperience": 9800
+  },
+  {
+    "position": 4,
+    "user": {
+      "name": "Robson Marques",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2254731?s=460&u=4fcc8ca9672eeb41ea800271831b7c687bc17054&v=4"
+    },
+    "level": 34,
+    "challengedCompleted": 84,
+    "currentExperience": 77400
+  },
+  {
+    "position": 5,
+    "user": {
+      "name": "Rodrigo Terron",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/2254731?s=460&u=4fcc8ca9672eeb41ea800271831b7c687bc17054&v=4"
+    },
+    "level": 32,
+    "challengedCompleted": 65,
+    "currentExperience": 52000
+  }
+]

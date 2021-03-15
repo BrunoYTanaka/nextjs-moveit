@@ -57,6 +57,7 @@
 
 .challengedCompleted {
   width: 20%;
+  min-width: 20%;
   background-color: var(--white);
   display: flex;
   justify-content: flex-start;
@@ -69,7 +70,7 @@
 }
 
 .experience {
-  padding: 1rem 4rem 1rem 1rem;
+  padding: 1rem 4rem 1rem 0;
   border-radius: 0 5px 5px 0;
   background-color: var(--white);
   display: flex;
