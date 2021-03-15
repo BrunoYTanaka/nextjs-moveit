@@ -1,5 +1,6 @@
 .navMenu {
   width: 100%;
+  max-width: 100px;
   height: 100vh;
   position: relative;
   background-color: var(--white);

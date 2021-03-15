@@ -1,4 +1,10 @@
-import { useState, ReactElement, ChangeEvent, useContext } from 'react'
+import {
+  useState,
+  ReactElement,
+  ChangeEvent,
+  useContext,
+  KeyboardEvent,
+} from 'react'
 import Image from 'next/image'
 import { ImSpinner2 } from 'react-icons/im'
 import { useRouter } from 'next/router'
@@ -47,6 +53,13 @@ function Login(): ReactElement {
         setIsLoading(false)
       })
   }
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleClick()
+    }
+  }
+
   return (
     <div className={styles.loginContainer}>
       <div className={styles.background} />
@@ -69,6 +82,7 @@ function Login(): ReactElement {
               type="text"
               placeholder="Digite seu username"
               onChange={handleChange}
+              onKeyDown={handleKeyDown}
             />
             {isLoading ? (
               <div className={styles.loadingContent}>

@@ -1,0 +1,83 @@
+.container {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.position {
+  min-width: 5rem;
+  background-color: var(--white);
+  color: var(--text);
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 5px 0 0 5px;
+  border-right: 2px solid var(--background);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user {
+  flex:1;
+  width: 60%;
+  min-width: 60%;
+  padding: 1rem;
+  background-color: var(--white);
+  display: flex;
+}
+
+.user img {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+}
+
+.userInfo {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userInfo strong {
+  color:var(--text-black)
+}
+
+.userInfo svg {
+  color:var(--green);
+  margin-right: 0.5rem;
+}
+
+.userInfo span {
+  margin-top: 1rem;
+  color: var(--text);
+  font-weight: bold;
+}
+
+.challengedCompleted {
+  width: 20%;
+  background-color: var(--white);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.challengedCompleted span {
+  color: var(--blue-dark);
+  margin-right: 1rem;
+}
+
+.experience {
+  padding: 1rem 4rem 1rem 1rem;
+  border-radius: 0 5px 5px 0;
+  background-color: var(--white);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.experience span {
+  color: var(--blue-dark);
+  margin: 1rem;
+}
