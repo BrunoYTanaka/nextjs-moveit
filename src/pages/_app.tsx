@@ -5,8 +5,10 @@ import { ToastContainer } from 'react-toastify'
 import { AuthProvider } from '../contexts/AuthContext'
 import 'react-toastify/dist/ReactToastify.css'
 import Layout from '../components/Layout'
+import useLoading from '../hooks/useLoading'
 
 function MyApp({ Component, pageProps, router }: AppProps): ReactElement {
+  useLoading()
   const canShowLayout = !router.pathname.startsWith('/login')
 
   const WrapperLayout = canShowLayout ? Layout : Fragment
