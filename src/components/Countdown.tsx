@@ -1,6 +1,8 @@
 import { ReactElement, useContext } from 'react'
+import { motion } from 'framer-motion'
 import { CountdownContext } from '../contexts/CountdownContext'
 import styles from '../styles/components/Countdown.module.css'
+import TIMER from '../constants/constants'
 
 function Countdown(): ReactElement {
   const {
@@ -43,7 +45,10 @@ function Countdown(): ReactElement {
               >
                 Abandonar ciclo
                 <div className={styles.progressBar}>
-                  <div />
+                  <motion.div
+                    animate={{ width: ['100%', '0%'] }}
+                    transition={{ duration: TIMER }}
+                  />
                 </div>
               </button>
             </>

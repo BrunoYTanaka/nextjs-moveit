@@ -7,9 +7,10 @@ import {
   ReactElement,
 } from 'react'
 import { ChallengesContext } from './ChallengesContext'
+import TIMER from '../constants/constants'
 
 let countdownTimeout: NodeJS.Timeout
-const initialTime = 25 * 60
+
 interface CountdownContextData {
   minutes: number
   seconds: number
@@ -29,7 +30,7 @@ export const CountdownProvider = ({
   children,
 }: CountdownProviderProps): ReactElement => {
   const { startNewChallenge } = useContext(ChallengesContext)
-  const [time, setTime] = useState(initialTime)
+  const [time, setTime] = useState(TIMER)
   const [isActive, setIsActive] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
 
@@ -43,7 +44,7 @@ export const CountdownProvider = ({
   const resetCountdown = () => {
     clearTimeout(countdownTimeout)
     setIsActive(false)
-    setTime(initialTime)
+    setTime(TIMER)
     setHasFinished(false)
   }
 
