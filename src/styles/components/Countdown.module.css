@@ -80,7 +80,7 @@
   height: 4px;
   border-radius: 0 0 5px 5px;
   background-color: var(--green);
-  animation: progressBar 6s ease-in-out forwards;
+  animation: progressBar 1500s ease-in-out forwards;
 }
 
 .countdownButtonActive:not(:disabled):hover {

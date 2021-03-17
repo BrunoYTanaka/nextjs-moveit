@@ -9,8 +9,7 @@ import {
 import { ChallengesContext } from './ChallengesContext'
 
 let countdownTimeout: NodeJS.Timeout
-// const initialTime = 25 * 60
-const initialTime = 6
+const initialTime = 25 * 60
 interface CountdownContextData {
   minutes: number
   seconds: number
