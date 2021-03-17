@@ -19,7 +19,6 @@
   font-size: 8.5rem;
   text-align: center;
 
-
 }
 
 .countdownContainer > div span {
@@ -38,10 +37,11 @@
 .countdownButton {
   width: 100%;
   height: 5rem;
-
+  position: relative;
   margin-top: 2rem;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -66,6 +66,23 @@
   color: var(--title);
 }
 
+/* progress bar */
+.countdownButton .progressBar  {
+  border-radius: 0 0 5px 5px;
+  height: 4px;
+  top: 100%;
+  position: absolute;
+  width: 100%;
+  background-color: var(--gray-line);
+}
+/* progress bar total progressed */
+.countdownButton .progressBar > div {
+  height: 4px;
+  border-radius: 0 0 5px 5px;
+  background-color: var(--green);
+  animation: progressBar 6s ease-in-out forwards;
+}
+
 .countdownButtonActive:not(:disabled):hover {
   background: var(--red);
   color: var(--white);
@@ -76,3 +93,9 @@
   color: var(--text);
   cursor: not-allowed;
 }
+
+@keyframes progressBar {
+  0% { width: 100%; }
+  100% { width: 0; }
+}
+

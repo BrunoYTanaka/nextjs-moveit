@@ -35,13 +35,18 @@ function Countdown(): ReactElement {
       ) : (
         <>
           {isActive ? (
-            <button
-              type="button"
-              className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
-              onClick={resetCountdown}
-            >
-              Abandonar ciclo
-            </button>
+            <>
+              <button
+                type="button"
+                className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
+                onClick={resetCountdown}
+              >
+                Abandonar ciclo
+                <div className={styles.progressBar}>
+                  <div />
+                </div>
+              </button>
+            </>
           ) : (
             <button
               type="button"

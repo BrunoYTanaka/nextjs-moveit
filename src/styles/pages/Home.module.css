@@ -24,7 +24,7 @@
     grid-template-rows: repeat(2,1fr);
     row-gap: 1.2rem;
   }
-  .container section div:last-child {
+  .container section > div:last-child {
     margin-bottom: 1rem;
   }
 }
