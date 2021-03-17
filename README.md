@@ -1,5 +1,8 @@
 # MoveIt
 
+# Project Preview
+![Project Preview](preview.gif)
+
 # About the project
   This project was developed using [NextJS](https://nextjs.org/) during rocketseat Next Level Week editon 4.
 
