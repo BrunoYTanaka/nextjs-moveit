@@ -1,6 +1,8 @@
 .container {
   height: 100vh;
   width: 100%;
+  margin: 0 auto;
+  max-width: 75%;
   padding: 2.5rem 2rem;
   overflow-x: auto;
   display: flex;

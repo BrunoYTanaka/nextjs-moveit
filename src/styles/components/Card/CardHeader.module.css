@@ -1,72 +1,47 @@
 .container {
-  width: 100%;
-  border: 2px solid var(--background);
-  display: flex;
-
   color: var(--text);
   font-weight: 600;
+  min-width: 700px;
+
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .position {
+  flex-grow: 0;
+  max-width: 8.33%;
+  flex-basis: 8.33%;
+  margin-right: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .user {
-  width: 100%;
-  min-width: 900px;
-  margin-left: 1rem;
+  flex-grow: 0;
+  max-width: 41.66%;
+  flex-basis: 41.66%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .challengedCompleted {
-  width: 100%;
-  min-width: 200px;
+  flex-grow: 0;
+  max-width: 25%;
+  flex-basis: 25%;
+  padding: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 .experience {
-  width: 100%;
-  padding: 1rem 4rem 1rem 1rem;
+  flex-grow: 0;
+  max-width: 25%;
+  flex-basis: 25%;
+  padding: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-
-@media(max-width: 1500px){
-  .user {
-    min-width: 600px
-  }
-  .challengedCompleted{
-    min-width: 100px;
-  }
-}
-
-@media(max-width: 1200px){
-  .user,
-  .challengedCompleted,
-  .experience {
-    min-width: 300px;
-  }
-}
-
-@media(max-width: 720px){
-  .container {
-    min-width: 750px;
-  }
-  .user,
-  .challengedCompleted,
-  .experience {
-    min-width: 100px
-  }
-  .challengedCompleted,
-  .experience {
-    margin-left: 2rem;
-  }
 }
