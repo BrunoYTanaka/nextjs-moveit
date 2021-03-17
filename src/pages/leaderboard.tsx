@@ -8,7 +8,7 @@ import leaderboard from '../../leaderboard.json'
 function Leaderboard(): ReactElement {
   return (
     <div className={styles.container}>
-      <h1>LeaderBoard</h1>
+      <h1>Leaderboard</h1>
       <CardHeader />
       {leaderboard.map(user => (
         <Card

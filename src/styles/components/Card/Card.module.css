@@ -15,7 +15,7 @@
   font-weight: 600;
   border-radius: 5px 0 0 5px;
   border-right: 2px solid var(--background);
-
+  min-width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,8 @@
 }
 
 .userInfo strong {
-  color:var(--text-black)
+  color:var(--text-black);
+  font-size: 1.25rem;
 }
 
 .userInfo svg {
@@ -57,7 +58,8 @@
   flex-wrap: nowrap;
   margin-top: 1rem;
   color: var(--text);
-  font-weight: bold;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .challengedCompleted {
@@ -82,7 +84,6 @@
   max-width: 25%;
   flex-basis: 25%;
   padding: 1rem;
-  /* width: 100%; */
   border-radius: 0 5px 5px 0;
   background-color: var(--white);
   display: flex;
@@ -92,5 +93,5 @@
 
 .experience span {
   color: var(--blue-dark);
-  margin: 1rem;
+  margin-right: 1rem;
 }
