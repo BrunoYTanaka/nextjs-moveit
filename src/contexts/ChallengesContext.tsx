@@ -17,6 +17,7 @@ interface Challenge {
 
 interface ChallengesContextData {
   level: number
+  previousExperience: number
   currentExperience: number
   challengesCompleted: number
   experienceToNextLevel: number
@@ -42,6 +43,7 @@ export function ChallengesProvider({
   ...rest
 }: ChallengesProviderProps): ReactElement {
   const [level, setLevel] = useState(rest.level ?? 1)
+  const [previousExperience, setPreviousExperience] = useState(0)
   const [currentExperience, setCurrentExperience] = useState(
     rest.currentExperience ?? 0,
   )
@@ -60,9 +62,9 @@ export function ChallengesProvider({
 
   useEffect(() => {
     Cookies.set('level', String(level))
-    Cookies.set('currentExperience', String(currentExperience))
+    Cookies.set('previousExperience', String(previousExperience))
     Cookies.set('challengesCompleted', String(challengesCompleted))
-  }, [level, challengesCompleted, currentExperience])
+  }, [level, challengesCompleted, currentExperience, previousExperience])
 
   const levelUp = () => {
     setLevel(level + 1)
@@ -95,12 +97,23 @@ export function ChallengesProvider({
       return
     }
     const { amount } = activeChallenge
-
+    setPreviousExperience(currentExperience)
     let finalExperience = currentExperience + amount
 
     if (finalExperience >= experienceToNextLevel) {
       finalExperience -= experienceToNextLevel
-      levelUp()
+
+      setCurrentExperience(experienceToNextLevel)
+      setActiveChallenge(null)
+
+      setTimeout(() => {
+        setPreviousExperience(0)
+        setCurrentExperience(finalExperience)
+        setChallengesCompleted(challengesCompleted + 1)
+        levelUp()
+      }, 1000)
+
+      return
     }
 
     setCurrentExperience(finalExperience)
@@ -111,6 +124,7 @@ export function ChallengesProvider({
   return (
     <ChallengesContext.Provider
       value={{
+        previousExperience,
         level,
         currentExperience,
         experienceToNextLevel,
