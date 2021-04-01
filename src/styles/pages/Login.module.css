@@ -6,7 +6,14 @@
   background: var(--blue);
 }
 
+.background {
+  flex:1;
+  background: url('/login-logo.svg') no-repeat var(--blue) left;
+}
+
 .content {
+  padding: 1rem;
+
   height: 100%;
   width: 100%;
   max-width: 900px;
@@ -19,10 +26,6 @@
   align-items: flex-start;
 }
 
-.content {
-  padding: 1rem;
-}
-
 .contentInfo {
   flex:1;
   max-height: 320px;
@@ -31,7 +34,7 @@
   justify-content: space-evenly;
 }
 
- .contentInfo > div {
+.contentInfo > div {
   font-size: 2.2rem;
   font-weight: 600;
   color: var(--white);
@@ -104,10 +107,6 @@
   font-size: 0.9rem;
   font-weight: 500;
   color: #c53030
-}
-.background {
-  flex:1;
-  background: url('/login-logo.svg') no-repeat var(--blue) left;
 }
 
 .loadingContent {

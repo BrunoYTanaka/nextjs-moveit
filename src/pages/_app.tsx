@@ -7,9 +7,12 @@ import 'react-toastify/dist/ReactToastify.css'
 import Layout from '../components/Layout'
 import useLoading from '../hooks/useLoading'
 
+const withoutLayout = ['/login', '/404']
+
 function MyApp({ Component, pageProps, router }: AppProps): ReactElement {
   useLoading()
-  const canShowLayout = !router.pathname.startsWith('/login')
+
+  const canShowLayout = !withoutLayout.includes(router.pathname)
 
   const WrapperLayout = canShowLayout ? Layout : Fragment
 

@@ -1,0 +1,77 @@
+.container {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: stretch;
+  background: var(--blue);
+}
+
+.background {
+  flex:1;
+  max-width: 900px;
+  background: url('/login-logo.svg') no-repeat var(--blue) left;
+}
+
+.content {
+  padding: 1rem;
+  color: var(--white);
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contentInfo {
+  flex:1;
+  max-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.contentInfo > div {
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.contentInfo .infoMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contentInfo .infoMessage span {
+  margin-left: 10px;
+  color: var(--text-highlight);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.contentInfo .backContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contentInfo .backContent svg {
+  margin-right: 10px;
+}
+
+.contentInfo .backContent {
+  margin-left: 10px;
+  font-size: 1.2rem;
+  color: var(--white);
+  transition: color 0.2s;
+
+  width: fit-content;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.contentInfo .backContent:hover {
+  color:var(--gray-line)
+}
