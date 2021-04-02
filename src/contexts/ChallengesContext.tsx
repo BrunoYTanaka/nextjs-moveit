@@ -64,7 +64,7 @@ export function ChallengesProvider({
     Cookies.set('level', String(level))
     Cookies.set('previousExperience', String(previousExperience))
     Cookies.set('challengesCompleted', String(challengesCompleted))
-  }, [level, challengesCompleted, currentExperience, previousExperience])
+  }, [level, challengesCompleted, previousExperience])
 
   const levelUp = () => {
     setLevel(level + 1)

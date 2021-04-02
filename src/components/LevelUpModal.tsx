@@ -1,4 +1,5 @@
 import { ReactElement, useContext, useEffect, useRef } from 'react'
+import { AiOutlineTwitter } from 'react-icons/ai'
 import { ChallengesContext } from '../contexts/ChallengesContext'
 import styles from '../styles/components/LevelUpModal.module.css'
 
@@ -36,10 +37,20 @@ function LevelUpModal(): ReactElement {
         <header>{level}</header>
         <strong>Parabéns</strong>
         <p>Você alcançou um novo level</p>
-        <button type="button" onClick={closeLevelUpModal}>
+        <button
+          type="button"
+          onClick={closeLevelUpModal}
+          className={styles.closeButton}
+        >
           <img src="/icons/close.svg" alt="Fechar modal" />
         </button>
       </div>
+      <button type="button" className={styles.twitterButton}>
+        <span>
+          Compartilhar no Twitter
+          <AiOutlineTwitter size={24} />
+        </span>
+      </button>
     </div>
   )
 }

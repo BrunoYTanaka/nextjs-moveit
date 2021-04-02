@@ -7,6 +7,7 @@
   right: 0;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -14,9 +15,9 @@
 .container {
   background: var(--white);
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   padding: 2rem 3rem;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   text-align: center;
   position: relative;
@@ -35,7 +36,7 @@
   font-size: 2.25rem;
 }
 
-.container button {
+.container .closeButton {
   position: absolute;
   right: 0.5rem;
   top: 0.5rem;
@@ -43,4 +44,43 @@
   background: transparent;
   border: 0;
   font-size: 0;
+}
+
+ .twitterButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem 1rem;
+  border: 0;
+  border-radius: 0 0 5px 5px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid var(--gray-line);
+  background-color: var(--white);
+}
+
+.twitterButton > span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--blue-twitter);
+}
+
+.twitterButton > span > svg {
+  margin-left: 0.5rem;
+}
+
+
+@media(max-width: 600px){
+  .container {
+    max-width: 400px;
+  }
+  .twitterButton {
+    max-width: 400px;
+  }
 }
