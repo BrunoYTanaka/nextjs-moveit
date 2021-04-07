@@ -2,6 +2,7 @@ import useSWR from 'swr'
 import { GetServerSideProps } from 'next'
 import React, { Fragment, ReactElement, useMemo } from 'react'
 import axios from 'axios'
+import Loading from '../components/Loading'
 import Card from '../components/Card'
 import CardHeader from '../components/Card/CardHeader'
 import styles from '../styles/pages/Leaderboard.module.css'
@@ -46,11 +47,11 @@ function Leaderboard(): ReactElement {
 
   const leaderboard = useMemo(() => {
     if (data) {
-      return data.map((user, index) => ({
-        id: user.id.value,
+      return data.map((person, index) => ({
+        id: person.id.value,
         user: {
-          name: `${user.name.first} ${user.name.last}`,
-          avatarUrl: user.picture.thumbnail,
+          name: `${person.name.first} ${person.name.last}`,
+          avatarUrl: person.picture.thumbnail,
         },
         position: index + 1,
         currentExperience: randomIntFromInterval(5000, 8000),
@@ -65,14 +66,15 @@ function Leaderboard(): ReactElement {
     <div className={styles.container}>
       <h1>Leaderboard</h1>
       <CardHeader />
-      {leaderboard.map((user, index) => (
-        <Fragment key={`${user.user.name}-${user.id}`}>
+      {!data && <Loading />}
+      {leaderboard.map(person => (
+        <Fragment key={`${person.user.name}-${person.id}`}>
           <Card
-            user={user.user}
-            position={index + 1}
-            level={user.level}
-            currentExperience={user.currentExperience}
-            challengedCompleted={user.challengedCompleted}
+            user={person.user}
+            position={person.position}
+            level={person.level}
+            currentExperience={person.currentExperience}
+            challengedCompleted={person.challengedCompleted}
           />
         </Fragment>
       ))}
